@@ -4,7 +4,7 @@ struct hotel
     char name[20], address[45];
     int rate, grade, rooms;
 };
-
+void specified(struct hotel[], int);
 int main()
 {
     int n, i, j;
@@ -45,5 +45,23 @@ int main()
         printf("%d \n", h1[i].grade);
         printf("%d \n", h1[i].rate);
         printf("%d \n", h1[i].rooms);
+    }
+    specified(h1, n);
+}
+void specified(struct hotel x[], int n)
+{
+    int price;
+    printf("Enter a specified price:");
+    scanf("%d", &price);
+    for (int i = 0; i < n; i++)
+    {
+        if (x[i].rate < price)
+        {
+            printf("%s \n", x[i].name);
+            printf("%s \n", x[i].address);
+            printf("%d \n", x[i].grade);
+            printf("%d \n", x[i].rate);
+            printf("%d \n", x[i].rooms);
+        }
     }
 }
