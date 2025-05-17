@@ -29,7 +29,8 @@ int main()
         else if (choice == 2)
         {
             FILE *fp2, *fp3;
-            fp2 = fopen("sample.txt", "r+");
+            fp2 = fopen("sample.txt", "r");
+            fp3 = fopen("sample.txt", "w");
             char ch2, ch3[30];
             if (fp2 != NULL)
             {
@@ -37,12 +38,17 @@ int main()
                 {
                     putchar(ch2);
                 }
+            }
+            if (fp3 != NULL)
+            {
                 fseek(fp2, 0, SEEK_END);
+                fseek(fp3, 0, SEEK_END);
                 printf("write:");
                 getchar();
                 fgets(ch3, 30, stdin);
-                fprintf(fp2, "%s", ch3);
+                fprintf(fp3, "%s", ch3);
                 fclose(fp2);
+                fclose(fp3);
             }
         }
         else if (choice == 3)
