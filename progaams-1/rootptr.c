@@ -19,8 +19,8 @@ void rootptr(int *x, int *y, int *z)
     }
     else if (d > 0)
     {
-        root1 = -(*y) + pow(d, 0.5);
-        root2 = (*y) + pow(d, 0.5);
+        root1 = -(*y) + pow(d, 0.5)/2*(*x);
+        root2 = (*y) + pow(d, 0.5)/2*(*x);
     }
     else
     {
